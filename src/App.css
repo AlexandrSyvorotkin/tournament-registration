@@ -1,5 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Foldit&display=swap');
+
 .App {
   text-align: center;
+  background-color: #282c34;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  /*background-image: url("https://img3.akspic.ru/crops/9/3/9/4/6/164939/164939-igra_za_mir-kibersport-mir-razvlechenie-zhest-1920x1080.jpg");*/
+  background-image: url("https://img.freepik.com/free-photo/cool-geometric-triangular-hallway-3d-rendering_181624-11762.jpg?w=2000&t=st=1683704665~exp=1683705265~hmac=6cdf5cb492cf2d081c1ad526ceb69d7b3b4a130c5be91593490d0dbb347aa344");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+body {
+  font-family: Foldit, sans-serif;
 }
 
 .App-logo {
@@ -26,6 +45,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.header {
+  color: wheat;
 }
 
 @keyframes App-logo-spin {
