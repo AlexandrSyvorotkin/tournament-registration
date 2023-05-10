@@ -16,12 +16,13 @@ const TournamentRegistrationForm = () => {
         email: '',
         discipline: '',
         consent: false,
+        team: ''
     });
 
 
     const [phoneError, setPhoneError] = useState(null);
 
-    const { firstName, lastName, middleName, phone, email, discipline, consent } = formData;
+    const { firstName, lastName, middleName, phone, email, discipline, consent, team } = formData;
 
     const handleInputChange = (event) => {
         const { name, value, type, checked } = event.target;
@@ -53,7 +54,8 @@ const TournamentRegistrationForm = () => {
             middleName: middleName,
             phone:phone,
             email: email,
-            discipline: discipline
+            discipline: discipline,
+            team: team
         }
 
         axios.post('https://sheet.best/api/sheets/f0c4d75a-f3f9-44fb-a510-335b13dd7c23', data).then(response => console.log(response))
@@ -96,6 +98,18 @@ const TournamentRegistrationForm = () => {
                         name="middleName"
                         id="middleName"
                         value={middleName}
+                        onChange={handleInputChange}
+                        required
+                        className='input'
+                    />
+                </div>
+                <div className='content-div'>
+                    <label htmlFor="team" className='label'>Название команды:</label>
+                    <input
+                        type="text"
+                        name="team"
+                        id="team"
+                        value={team}
                         onChange={handleInputChange}
                         required
                         className='input'
