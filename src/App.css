@@ -16,8 +16,8 @@
   background-position: center center;
   padding: 30px;
   height: 100%;
-  width: 100%;
-  overflow: auto;
+  width: auto;
+  overflow-y: auto;
 }
 
 body {
@@ -43,7 +43,7 @@ body {
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,6 +59,7 @@ body {
 .header {
   color: #87CEFA;
   font-size: 26px;
+  width: auto;
 }
 
 @keyframes App-logo-spin {
