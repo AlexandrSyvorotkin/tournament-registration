@@ -68,24 +68,24 @@ const TournamentRegistrationForm = () => {
         {!registrationEnd ?
             <form onSubmit={handleSubmit} className='registration'>
                 <div className='content-div'>
-                    <label htmlFor="firstName" className='label'>Имя:</label>
-                    <input
-                        type="text"
-                        name="firstName"
-                        id="firstName"
-                        value={firstName}
-                        onChange={handleInputChange}
-                        required
-                        className='input'
-                    />
-                </div>
-                <div className='content-div'>
                     <label htmlFor="lastName" className='label'>Фамилия:</label>
                     <input
                         type="text"
                         name="lastName"
                         id="lastName"
                         value={lastName}
+                        onChange={handleInputChange}
+                        required
+                        className='input'
+                    />
+                </div>
+                <div className='content-div'>
+                    <label htmlFor="firstName" className='label'>Имя:</label>
+                    <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        value={firstName}
                         onChange={handleInputChange}
                         required
                         className='input'
