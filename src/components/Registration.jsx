@@ -144,9 +144,9 @@ const TournamentRegistrationForm = () => {
                     <label htmlFor="discipline" className='label'>Дисциплина:</label>
                     <select name="discipline" id="discipline" value={discipline} onChange={handleInputChange}>
                         <option value="">Выберите дисциплину</option>
-                        <option value="Дота">Дота</option>
-                        <option value="КС">КС</option>
-                        <option value="Фифа">Фифа</option>
+                        <option value="Дота">Dota 2</option>
+                        <option value="КС">CS:GO</option>
+                        <option value="Фифа">Fifa 2023</option>
                     </select>
                 </div>
                 <div className='agrement'>
