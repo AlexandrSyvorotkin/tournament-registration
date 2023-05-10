@@ -48,7 +48,8 @@ body {
 }
 
 .header {
-  color: wheat;
+  color: #87CEFA;
+  font-size: 26px;
 }
 
 @keyframes App-logo-spin {
