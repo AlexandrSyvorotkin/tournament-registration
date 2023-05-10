@@ -18,6 +18,9 @@ const TournamentRegistrationForm = () => {
         consent: false,
     });
 
+
+    const [phoneError, setPhoneError] = useState(null);
+
     const { firstName, lastName, middleName, phone, email, discipline, consent } = formData;
 
     const handleInputChange = (event) => {
@@ -27,6 +30,19 @@ const TournamentRegistrationForm = () => {
             ...formData,
             [name]: newValue,
         });
+    };
+
+    const handlePhoneChange = (event) => {
+        const value = event.target.value;
+        setFormData({
+            ...formData,
+            phone: value,
+        });
+        if (value.length !== 11) {
+            setPhoneError('Номер телефона должен содержать 11 цифр');
+        } else {
+            setPhoneError(null);
+        }
     };
 
     const handleSubmit = (event) => {
@@ -49,7 +65,7 @@ const TournamentRegistrationForm = () => {
     <>
         {!registrationEnd ?
             <form onSubmit={handleSubmit} className='registration'>
-                <div>
+                <div className='content-div'>
                     <label htmlFor="firstName" className='label'>Имя:</label>
                     <input
                         type="text"
@@ -61,7 +77,7 @@ const TournamentRegistrationForm = () => {
                         className='input'
                     />
                 </div>
-                <div>
+                <div className='content-div'>
                     <label htmlFor="lastName" className='label'>Фамилия:</label>
                     <input
                         type="text"
@@ -73,7 +89,7 @@ const TournamentRegistrationForm = () => {
                         className='input'
                     />
                 </div>
-                <div>
+                <div className='content-div'>
                     <label htmlFor="middleName" className='label'>Отчество:</label>
                     <input
                         type="text"
@@ -85,19 +101,20 @@ const TournamentRegistrationForm = () => {
                         className='input'
                     />
                 </div>
-                <div>
+                <div className='content-div'>
                     <label htmlFor="phone" className='label'>Телефон:</label>
                     <input
                         type="tel"
                         name="phone"
                         id="phone"
                         value={phone}
-                        onChange={handleInputChange}
+                        onChange={handlePhoneChange}
                         required
                         className='input'
                     />
+                    {phoneError && <div style={{ color: 'red', fontSize: '10px' }}>{phoneError}</div>}
                 </div>
-                <div>
+                <div className='content-div'>
                     <label htmlFor="email" className='label'>E-mail:</label>
                     <input
                         type="email"
@@ -109,7 +126,7 @@ const TournamentRegistrationForm = () => {
                         className='input'
                     />
                 </div>
-                <div>
+                <div className='content-div select'>
                     <label htmlFor="discipline" className='label'>Дисциплина:</label>
                     <select name="discipline" id="discipline" value={discipline} onChange={handleInputChange}>
                         <option value="">Выберите дисциплину</option>
