@@ -2,11 +2,12 @@
     border: 1px solid #61dafb;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     padding: 20px;
     justify-content: center;
     align-items: center;
     width: 250px;
+    /*height: 100%;*/
 }
 
 .label {

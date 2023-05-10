@@ -3,8 +3,7 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,10 +16,13 @@
   background-position: center center;
   padding-right: 10px;
   padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 body {
   font-family: Foldit, sans-serif;
+  width: 100vw;
+  height: 100vh;
 }
 
 .App-logo {
@@ -65,4 +67,8 @@ body {
 
 .format {
   color: white;
+}
+
+#root {
+  height: 100%;
 }
