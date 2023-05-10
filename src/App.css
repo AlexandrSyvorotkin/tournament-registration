@@ -3,7 +3,7 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  height: 100%;
+  /*height: 100%;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,11 +17,16 @@
   padding-right: 10px;
   padding-left: 10px;
   padding-bottom: 10px;
+  height: 100%;
+  overflow: auto;
 }
 
 body {
   font-family: Foldit, sans-serif;
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
