@@ -56,7 +56,7 @@ const TournamentRegistrationForm = () => {
             phone:phone,
             email: email,
             discipline: discipline,
-            team: team,
+            // team: team,
             steamAccount: steamAccount
         }
 
