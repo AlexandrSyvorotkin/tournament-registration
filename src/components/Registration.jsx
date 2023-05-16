@@ -16,13 +16,14 @@ const TournamentRegistrationForm = () => {
         email: '',
         discipline: '',
         consent: false,
-        team: ''
+        team: '',
+        steamAccount: false
     });
 
 
     const [phoneError, setPhoneError] = useState(null);
 
-    const { firstName, lastName, middleName, phone, email, discipline, consent, team } = formData;
+    const { firstName, lastName, middleName, phone, email, discipline, consent, team, steamAccount } = formData;
 
     const handleInputChange = (event) => {
         const { name, value, type, checked } = event.target;
@@ -55,7 +56,8 @@ const TournamentRegistrationForm = () => {
             phone:phone,
             email: email,
             discipline: discipline,
-            team: team
+            team: team,
+            steamAccount: steamAccount
         }
 
         axios.post('https://sheet.best/api/sheets/f0c4d75a-f3f9-44fb-a510-335b13dd7c23', data).then(response => console.log(response))
@@ -126,7 +128,7 @@ const TournamentRegistrationForm = () => {
                         required
                         className='input'
                     />
-                    {phoneError && <div style={{ color: 'red', fontSize: '10px' }}>{phoneError}</div>}
+                    {phoneError && <div style={{ color: 'white',marginTop: '10px', fontSize: '10px' }}>{phoneError}</div>}
                 </div>
                 <div className='content-div'>
                     <label htmlFor="email" className='label'>E-mail:</label>
@@ -149,6 +151,14 @@ const TournamentRegistrationForm = () => {
                         <option value="Фифа">Fifa 2023</option>
                     </select>
                 </div>
+                <div className='content-div select'>
+                    <label htmlFor="steamAccount" className='label'>Steam аккаунт:</label>
+                    <select name="steamAccount" id="steamAccount" value={steamAccount} onChange={handleInputChange}>
+                        <option value={false}>Нет</option>
+                        <option value={true}>Да</option>
+                    </select>
+                </div>
+
                 <div className='agrement'>
                     <input className='concent-input' type="checkbox" name="consent" id="consent" checked={consent} onChange={handleInputChange} />
                     <label htmlFor="consent" className='consent'>
