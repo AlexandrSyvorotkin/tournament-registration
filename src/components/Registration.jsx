@@ -16,14 +16,14 @@ const TournamentRegistrationForm = () => {
         email: '',
         discipline: '',
         consent: false,
-        team: '',
+        // team: '',
         steamAccount: false
     });
 
 
     const [phoneError, setPhoneError] = useState(null);
 
-    const { firstName, lastName, middleName, phone, email, discipline, consent, team, steamAccount } = formData;
+    const { firstName, lastName, middleName, phone, email, discipline, consent, steamAccount } = formData;
 
     const handleInputChange = (event) => {
         const { name, value, type, checked } = event.target;
@@ -105,18 +105,18 @@ const TournamentRegistrationForm = () => {
                         className='input'
                     />
                 </div>
-                <div className='content-div'>
-                    <label htmlFor="team" className='label'>Название команды:</label>
-                    <input
-                        type="text"
-                        name="team"
-                        id="team"
-                        value={team}
-                        onChange={handleInputChange}
-                        required
-                        className='input'
-                    />
-                </div>
+                {/*<div className='content-div'>*/}
+                {/*    <label htmlFor="team" className='label'>Название команды:</label>*/}
+                {/*    <input*/}
+                {/*        type="text"*/}
+                {/*        name="team"*/}
+                {/*        id="team"*/}
+                {/*        value={team}*/}
+                {/*        onChange={handleInputChange}*/}
+                {/*        required*/}
+                {/*        className='input'*/}
+                {/*    />*/}
+                {/*</div>*/}
                 <div className='content-div'>
                     <label htmlFor="phone" className='label'>Телефон:</label>
                     <input
